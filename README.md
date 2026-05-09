@@ -1,66 +1,222 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# nConnect - webová aplikácia pre správu IT konferencie
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Popis projektu
 
-## About Laravel
+**nConnect** je fullstack webová aplikácia vytvorená ako semestrálny projekt. Slúži na komplexnú správu a prezentáciu IT konferencie **nConnect**, ktorá spája študentov IT a popredné firmy z oblasti informačných technológií. Konferencia nadväzuje na tradíciu formátu „IT v praxi" Fakulty prírodných vied a informatiky UKF v Nitre.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Aplikácia poskytuje **verejnú časť** (webstránku konferencie) pre návštevníkov a **administračný panel** pre organizátorov, ktorý umožňuje spravovať celý obsah konferencie bez nutnosti zásahu do kódu.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Hlavné funkcionality
 
-## Learning Laravel
+### Verejná časť (pre návštevníkov)
+- **Domovská stránka** — prehľad konferencie, informácie o podujatí, náhodný výber speakerov, program, referencie a sponzori
+- **Stránka speakerov** — zoznam všetkých speakerov s podrobnými profilmi (fotografia, krátky a dlhý popis, sociálne siete, firma)
+- **Program konferencie** — prehľad prednášok rozdelených podľa stage-ov a časových slotov
+- **Registrácia študentov** — registračný formulár s výberom prednášok, e-mailové potvrdenie s tokenom
+- **Správa registrácie** — aktivácia a zrušenie rezervácie cez unikátny token
+- **Partneri/sponzori** — zobrazenie loga sponzorov s odkazmi
+- **Kontakt** — kontaktné informácie
+- **Vlastné stránky** — dynamicky vytvorené stránky cez WYSIWYG editor
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Administračný panel (pre organizátorov)
+- **Dashboard** — prehľad modulov s rýchlym prístupom
+- **Správa stage-ov** — CRUD operácie (vytvorenie, úprava, vymazanie) pre konferenčné sály/stage
+- **Správa časových okien** — definovanie časových slotov pre prednášky
+- **Správa prednášok** — priradenie prednášok k stage-om, rečníkom a časovým slotom
+- **Správa speakerov** — CRUD operácie pre rečníkov vrátane fotografie a sociálnych sietí
+- **Správa sponzorov** — CRUD operácie pre sponzorov/partnerov
+- **Správa referencií (testimonials)** — CRUD operácie pre referencie
+- **Správa vlastných stránok** — WYSIWYG editor pre vytváranie vlastných HTML stránok
+- **Prehľad registrovaných študentov** — zoznam a správa registrácií
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Použité technológie
 
-## Laravel Sponsors
+### Backend
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+| Technológia | Verzia
+|---|---
+| **PHP** | ^8.1
+| **Laravel** | ^10.0 
+| **Laravel Sanctum** | ^3.3 
 
-### Premium Partners
+### Frontend
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+| Technológia | Verzia 
+|---|---
+| **Vue.js** | ^3.4.23 | 
+| **Vue Router** | ^4.3.2 
+| **Pinia** | ^2.1.7 
+| **Vuetify** | ^3.5.17 
+| **Vue Quill** | ^1.2.0 
+| **Axios** | ^1.6.
+| **Vue Axios** | ^3.5.2 
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## API Endpointy
 
-## Code of Conduct
+### Autentifikácia
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| POST | `/api/register` | Registrácia nového admin účtu |
+| POST | `/api/login` | Prihlásenie administrátora |
+| POST | `/api/logout` | Odhlásenie |
+| GET | `/api/authenticated` | Overenie, či je používateľ prihlásený |
 
-## Security Vulnerabilities
+### Sponzori
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/sponsors` | Získanie zoznamu sponzorov |
+| POST | `/api/sponsors` | Pridanie nového sponzora |
+| PATCH | `/api/sponsors/{id}` | Úprava sponzora |
+| DELETE | `/api/sponsors/{id}` | Vymazanie sponzora |
 
-## License
+### Referencie (Testimonials)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/testimonials` | Získanie zoznamu referencií |
+| POST | `/api/testimonials` | Pridanie novej referencie |
+| PATCH | `/api/testimonials/{id}` | Úprava referencie |
+| DELETE | `/api/testimonials/{id}` | Vymazanie referencie |
+
+### Stage (Konferenčné sály)
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/stages` | Získanie zoznamu stage-ov |
+| POST | `/api/stages` | Vytvorenie nového stage |
+| PATCH | `/api/stages/{id}` | Úprava stage |
+| DELETE | `/api/stages/{id}` | Vymazanie stage |
+
+### Program prednášok
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/programs` | Získanie zoznamu prednášok |
+| POST | `/api/programs` | Pridanie novej prednášky |
+| PATCH | `/api/programs/{id}` | Úprava prednášky |
+| DELETE | `/api/programs/{id}` | Vymazanie prednášky |
+
+### Rečníci
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/speakers` | Získanie zoznamu rečníkov |
+| POST | `/api/speakers` | Pridanie nového rečníka |
+| PATCH | `/api/speakers/{id}` | Úprava rečníka |
+| DELETE | `/api/speakers/{id}` | Vymazanie rečníka |
+
+### Časové sloty
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/sloty` | Získanie zoznamu časových slotov |
+| POST | `/api/sloty` | Pridanie nového slotu |
+| PATCH | `/api/sloty/{id}` | Úprava slotu |
+| DELETE | `/api/sloty/{id}` | Vymazanie slotu |
+
+### Registrácia študentov
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| POST | `/api/ulozit-registraciu` | Odoslanie registračného formulára + e-mail |
+| GET | `/api/student-data/{token}` | Aktivácia registrácie cez token |
+| POST | `/api/student-data/{token}` | Zrušenie rezervácie |
+| GET | `/api/students` | Získanie zoznamu registrovaných študentov |
+
+### Vlastné stránky
+
+| Metóda | Endpoint | Popis |
+|---|---|---|
+| GET | `/api/stranky` | Získanie zoznamu vlastných stránok |
+| POST | `/api/stranky` | Vytvorenie novej stránky |
+| PATCH | `/api/stranky/{id}` | Úprava stránky |
+| DELETE | `/api/stranky/{id}` | Vymazanie stránky |
+
+---
+
+## Inštalácia a spustenie
+
+### Požiadavky
+- PHP >= 8.1
+- Composer
+- Node.js a npm
+- MySQL databáza
+
+### Kroky inštalácie
+
+1. **Klonovanie repozitára**
+   ```bash
+   git clone https://github.com/PeterOpal/BT_semestralny_projekt.git
+   cd BT_semestralny_projekt
+   ```
+
+2. **Inštalácia PHP závislostí**
+   ```bash
+   composer install
+   ```
+
+3. **Inštalácia JavaScript závislostí**
+   ```bash
+   npm install
+   ```
+
+4. **Konfigurácia prostredia**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   Upravte súbor `.env` 
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nazov_vasej_databazy
+   DB_USERNAME=vas_pouzivatel
+   DB_PASSWORD=vase_heslo
+   ```
+
+5. **Spustenie migrácií**
+   ```bash
+   php artisan migrate
+   ```
+
+6. **Spustenie vývojového servera**
+   ```bash
+   # V jednom termináli:
+   php artisan serve
+
+   # V druhom termináli:
+   npm run dev
+   ```
+
+7. **Zostavenie pre produkciu**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## Architektúra aplikácie
+
+Aplikácia je postavená na architektúre **SPA (Single Page Application)**:
+
+- **Backend (Laravel)** slúži ako REST API server, ktorý spracúva všetky dátové operácie a autentifikáciu
+- **Frontend (Vue.js)** beží ako SPA — všetky routy sú obsluhované cez jediný Blade template (`app.blade.php`), pričom Vue Router riadi navigáciu na strane klienta
+- **Autentifikácia** je zabezpečená cez **Laravel Sanctum** (cookie-based SPA autentifikácia)
+- **Stavový manažment** na frontende je riešený cez **Pinia** store moduly
+- **UI komponenty** využívajú knižnicu **Vuetify 3** (Material Design)
+- Komunikácia medzi frontendom a backendom prebieha cez **REST API** s použitím **Axios**
+
+---
+
+## Licencia
+
+Tento projekt je postavený na frameworku Laravel, ktorý je licencovaný pod [MIT licenciou](https://opensource.org/licenses/MIT).
